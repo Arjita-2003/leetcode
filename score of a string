@@ -1,0 +1,16 @@
+class Solution {
+    public int scoreOfString(String s) {
+        int n = s.length();
+        int sum = 0;
+        for(int i=0;i<n-1;i++){
+            char ch = s.charAt(i);
+            char chr = s.charAt(i+1);
+            
+            int letter1 = (int) ch;
+            int letter2 = (int) chr;
+            sum += Math.abs(letter1 - letter2);
+        }
+        return sum;
+        
+    }
+}
