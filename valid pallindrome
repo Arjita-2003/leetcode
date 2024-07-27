@@ -1,0 +1,30 @@
+class Solution {
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        String str = s.toLowerCase();
+        String k = "";
+
+        for(int i=0;i<n;i++){
+            char ch = str.charAt(i);
+            if(ch=='a' || ch=='b' || ch=='c' || ch=='d' || ch=='e' || ch=='f' || ch=='g' || ch=='h' || ch=='i' || ch=='j' || ch=='k' || ch=='l' || ch=='m' || ch=='n' || ch=='o' || ch=='p' || ch=='q' || ch=='r' || ch=='s' || ch=='t' || ch=='u' || ch=='v' || ch=='w' || ch=='x' || ch=='y' || ch=='z' || ch=='0' || ch=='1' || ch=='2' || ch=='3' || ch=='4' || ch=='5' || ch=='6' || ch=='7' || ch=='8' ||  ch=='9'){
+
+                k += ch;
+            }
+        }
+        int size = k.length();
+        int i=0; 
+        int j = size-1;
+        Boolean flag = true;
+        while(i<j){
+            if(k.charAt(i) != k.charAt(j)){
+                flag = false;
+                break;
+            }
+            i++; j--;
+        }
+
+        if(flag==true) return true;
+        else return false;
+        
+    }
+}
