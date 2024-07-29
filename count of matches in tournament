@@ -1,0 +1,10 @@
+class Solution {
+    public int numberOfMatches(int n) {
+        int m = 0;
+        while(n>=2){
+            m += n/2;
+            n = n-(n/2);
+        }
+        return m;
+    }
+}
