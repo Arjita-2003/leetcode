@@ -1,0 +1,30 @@
+class Solution {
+    public int[] singleNumber(int[] nums) {
+        int n = nums.length;
+        //ArrayList<Integer> arr = new ArrayList<Integer>();
+        int j = 0;
+        int[] arr = new int[2];
+        Arrays.sort(nums);
+        for(int i=0;i<n-1;i++){
+            if(nums[i] == nums[i+1]){
+                i++;
+            }
+            else{
+                //arr.add(nums[i]);
+                arr[j] = nums[i];
+                j++;
+            }
+        }
+        if(nums[n-2] != nums[n-1]){
+           // arr.add(nums[n-1]);
+           arr[j] = nums[n-1];
+        }
+
+        /*int len = arr.size();
+        int[] array = new int[len];
+        for(int i=0;i<len;i++){
+            array[i] = arr.get(i);
+        }*/
+        return arr;
+    }
+}
