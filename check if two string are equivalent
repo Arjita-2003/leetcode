@@ -1,0 +1,28 @@
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        int a = word1.length;
+        int b = word2.length;
+        String s = "";
+        String k = "";
+        for(int i=0;i<a;i++){
+            String temp = word1[i];
+            s += temp;
+        }
+        for(int i=0;i<b;i++){
+            String temp = word2[i];
+            k += temp;
+        }
+        if(s.length() != k.length()){
+            return  false;
+        }
+
+        for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            char chr = k.charAt(i);
+            if(ch != chr){
+                return false;
+            }
+        }
+        return true;
+    }
+}
