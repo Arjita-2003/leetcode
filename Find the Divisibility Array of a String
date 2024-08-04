@@ -1,0 +1,19 @@
+class Solution {
+    public int[] divisibilityArray(String word, int m) {
+        int i, n = word.length();
+        int[] result = new int[n];
+        long val = 0;
+
+        for(i = 0; i < n; i++){
+            val = ((val * 10)%m) + (long)(word.charAt(i) - '0');
+            val = val % (long)m;
+            if(val == 0){
+                result[i] = 1;
+            }else{
+                result[i] = 0;
+            }
+        }
+
+        return result;
+    }
+}
