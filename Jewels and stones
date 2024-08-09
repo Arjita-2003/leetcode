@@ -1,0 +1,33 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        /*int count = 0;
+        HashSet<Character> set = new HashSet<>(jewels.length());
+        for(char ch : jewels.toCharArray()){
+            set.add(ch);
+        }
+        for(char c : stones.toCharArray()){
+            if(set.contains(c)) count++;
+        }
+        return count;*/
+
+        /*char c[]=jewels.toCharArray();
+        char s[]=stones.toCharArray();
+        int co=0;
+        for(int i=0;i<s.length;i++){
+            for(int j=0;j<c.length;j++){
+                if(c[j]==s[i]){
+                    co++;
+                }
+        }
+        }
+        return co;*/
+
+        int count=0;
+        for(int i=0; i<jewels.length(); i++){
+            for(int j=0; j<stones.length(); j++){
+                if(jewels.charAt(i) == stones.charAt(j)) count++;
+            }
+        }
+        return count;
+    }
+}
