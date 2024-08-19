@@ -1,0 +1,19 @@
+class Solution {
+    public String reverseOnlyLetters(String s) {
+        char[] arr = s.toCharArray();      
+        int low = 0 , high = s.length()-1;
+        while(low < high){
+            if(Character.isAlphabetic(arr[low]) && 
+            Character.isAlphabetic(arr[high])){
+                char i = arr[low];
+                arr[low] = arr[high];
+                arr[high] = i;
+                low++; 
+                high--;
+            }
+            else if(!Character.isAlphabetic(arr[low]))  low++;
+            else if(!Character.isAlphabetic(arr[high]))  high--;   
+        }
+        return String.valueOf(arr);
+    }
+}
