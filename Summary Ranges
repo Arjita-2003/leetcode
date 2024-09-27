@@ -1,0 +1,21 @@
+class Solution {
+    public List<String> summaryRanges(int[] nums) {
+        int n = nums.length;
+        ArrayList<String> ans = new ArrayList<>();
+        if(n==0) return ans;
+
+        int s = 0;
+        for(int e=1;e<=n;e++){
+            if(e==n || nums[e]!=nums[e-1]+1){
+                if(s==e-1){
+                    ans.add(String.valueOf(nums[s]));
+                }
+                else{
+                    ans.add(nums[s] + "->" + nums[e-1]);
+                }
+                s=e;
+            }
+        }
+        return ans;
+    }
+}
